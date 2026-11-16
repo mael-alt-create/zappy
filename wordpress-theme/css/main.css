@@ -87,29 +87,173 @@ body {
   padding-right: 1.5rem;
 }
 
-/* 1. Barre Supérieure Institutionnelle & Alertes */
-.top-bar-emergency {
-  background: #022C22;
-  color: #D1FAE5;
-  font-size: 0.825rem;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  overflow: hidden;
+/* 1. En-tête Unifié, Épuré & Minimaliste (Inspiré Modern Web Guidance & Emil Kowalski) */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background-color 200ms ease;
 }
 
-.top-bar-inner {
+[data-theme="dark"] .site-header {
+  background: rgba(15, 23, 42, 0.92);
+}
+
+.nav-container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  justify-content: space-between;
+  height: 64px;
+  gap: 1.5rem;
 }
 
-.official-stamp {
+/* Identité et sélecteur compact */
+.brand-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+  color: var(--text-main);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-main {
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.brand-sub {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+/* Petit sélecteur pilule pour changer de commune sans encombre */
+.commune-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  background: var(--bg-surface-muted);
+  color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 140ms ease;
+}
+
+.commune-pill-btn:hover {
+  background: var(--primary-subtle);
+  color: var(--primary-theme);
+  border-color: var(--primary-border);
+}
+
+/* Navigation centrale épurée (3 rubriques) */
+.nav-center {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  list-style: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: color 140ms ease;
+  padding: 0.35rem 0;
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--text-main);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--primary-theme);
+  border-radius: var(--radius-full);
+}
+
+/* Actions droites */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.search-pill-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-weight: 600;
-  white-space: nowrap;
+  padding: 0.35rem 0.75rem;
+  background: var(--bg-surface-muted);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 140ms ease;
+}
+
+.search-pill-btn:hover {
+  border-color: var(--border-light);
+  color: var(--text-main);
+  background: var(--bg-surface);
+}
+
+.search-kbd {
+  font-size: 0.7rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  color: var(--text-subtle);
+}
+
+.btn-sm {
+  padding: 0.45rem 0.95rem;
+  font-size: 0.825rem;
+  border-radius: var(--radius-full);
+}
+
+.btn-subtle {
+  background: transparent;
+  border-color: transparent;
+}
+.btn-subtle:hover {
+  background: var(--bg-surface-muted);
 }
 
 .flag-benin {
@@ -119,115 +263,12 @@ body {
   border-radius: 2px;
   overflow: hidden;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+  flex-shrink: 0;
 }
 .flag-benin .flag-g { width: 40%; background: #008751; height: 100%; }
 .flag-benin .flag-yr { width: 60%; display: flex; flex-direction: column; height: 100%; }
 .flag-benin .flag-y { height: 50%; background: #FCD116; }
 .flag-benin .flag-r { height: 50%; background: #E8112D; }
-
-/* 2. En-tête Sticky & Navigation */
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(14px) saturate(180%);
-  border-bottom: 1px solid var(--border-subtle);
-  transition: background-color 200ms ease;
-}
-
-[data-theme="dark"] .site-header {
-  background: rgba(17, 24, 39, 0.85);
-}
-
-.nav-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 72px;
-  gap: 1rem;
-}
-
-.brand-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 0.875rem;
-  text-decoration: none;
-  color: var(--text-main);
-}
-
-.brand-seal-mini {
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-md);
-  background: var(--bg-surface-muted);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--border-subtle);
-  overflow: hidden;
-  flex-shrink: 0;
-}
-
-.brand-text h1 {
-  font-size: 1.125rem;
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-.brand-text p {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-weight: 600;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  list-style: none;
-}
-
-.nav-link {
-  text-decoration: none;
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: color 150ms ease;
-  position: relative;
-  padding: 0.4rem 0;
-}
-
-.nav-link:hover,
-.nav-link.active {
-  color: var(--primary-theme);
-}
-
-.nav-link.active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: var(--primary-theme);
-  border-radius: var(--radius-full);
-}
-
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-/* 3. Sélecteur de Commune Rapide (Switcher) */
-.commune-switcher-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 0.875rem;
   background: var(--primary-subtle);
   color: var(--primary-theme);
   border: 1px solid var(--primary-border);

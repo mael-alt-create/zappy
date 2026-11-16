@@ -54,41 +54,41 @@ const COMMUNES_DATABASE = {
         hours: "Lun - Ven : 08h00 - 12h30 & 14h00 - 17h30"
       },
       heroImages: [
-        "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=80",
-        "https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1600&q=80"
+        "https://upload.wikimedia.org/wikipedia/commons/6/6a/Monument_de_l%27Amazone_au_Benin.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/e/e5/Place_de_Etoile_rouge.jpg"
       ],
       highlights: [
         {
           title: "Monument de l'Amazone",
           category: "Patrimoine & Fierté",
           badge: "Symbole National",
-          desc: "Statue majestueuse de 30 mètres en bronze rendant hommage aux Agoodjié, amazones guerrières du Dahomey.",
+          desc: "Statue majestueuse de 30 mètres en bronze sur le boulevard de la Marina rendant hommage aux Agoodjié, guerrières du Danxomè.",
           location: "Esplanade des Amazones, Boulevard de la Marina",
-          image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80"
+          image: "https://upload.wikimedia.org/wikipedia/commons/6/6a/Monument_de_l%27Amazone_au_Benin.jpg"
         },
         {
           title: "Marché International Dantokpa",
           category: "Commerce & Vitalité",
-          badge: "Plus grand marché d'Afrique de l'Ouest",
-          desc: "Carrefour commercial régional de 18 hectares brassant les marchandises et commerçants de toute la sous-région.",
+          badge: "Pôle Sous-Régional",
+          desc: "Carrefour commercial de 18 hectares en bordure lagunaire, brassant les commerçants de toute l'Afrique de l'Ouest.",
           location: "Bordure lagunaire de Cotonou",
-          image: "https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=800&q=80"
+          image: "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue_panoramique_march%C3%A9_Dantokpa_au_B%C3%A9nin1.jpg"
         },
         {
           title: "Place de l'Étoile Rouge",
           category: "Histoire & Urbanisme",
-          badge: "Incontournable",
-          desc: "Emblématique carrefour circulaire au cœur des flux urbains, symbole de la période révolutionnaire réaménagé.",
+          badge: "Carrefour Emblématique",
+          desc: "Grand carrefour circulaire et monument historique au croisement des grands axes de circulation de Cotonou.",
           location: "Croisement des grands axes de Cotonou",
-          image: "https://images.unsplash.com/photo-1519999482648-25049ddd37b1?auto=format&fit=crop&w=800&q=80"
+          image: "https://upload.wikimedia.org/wikipedia/commons/e/e5/Place_de_Etoile_rouge.jpg"
         },
         {
-          title: "Plage de Fidjrossè & Route des Pêches",
+          title: "Plage de Fidjrossè & Front de Mer",
           category: "Loisirs & Tourisme balnéaire",
-          badge: "Nouvelle Marina",
-          desc: "Front de mer moderne aménagé avec pistes cyclables, restaurants côtiers et couchers de soleil sur l'Atlantique.",
+          badge: "Route des Pêches",
+          desc: "Front de mer moderne réaménagé avec pistes piétonnes, cocoteraies et couchers de soleil sur le Golfe de Guinée.",
           location: "Fidjrossè - Cotonou Ouest",
-          image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
+          image: "https://upload.wikimedia.org/wikipedia/commons/7/74/Fidjross%C3%A8_Plage_%28Cotonou%29.jpg"
         }
       ],
       circuits: [
@@ -144,7 +144,7 @@ const COMMUNES_DATABASE = {
         hours: "Lun - Ven : 08h00 - 12h30 & 14h00 - 17h30"
       },
       heroImages: [
-        "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=80"
+        "https://upload.wikimedia.org/wikipedia/commons/d/d1/Grande_Mosquee_de_Porto-Novo.jpg"
       ],
       highlights: [
         {
@@ -153,7 +153,7 @@ const COMMUNES_DATABASE = {
           badge: "Chef d'œuvre Afro-Brésilien",
           desc: "Construite au début du XXe siècle par les Agudas revenus du Brésil, elle rappelle les églises baroques de Salvador de Bahia.",
           location: "Centre-ville historique",
-          image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80"
+          image: "https://upload.wikimedia.org/wikipedia/commons/d/d1/Grande_Mosquee_de_Porto-Novo.jpg"
         },
         {
           title: "Musée Honmè (Palais du Roi Toffa)",
@@ -161,15 +161,7 @@ const COMMUNES_DATABASE = {
           badge: "Trésor Royal",
           desc: "Ancien palais des souverains du royaume de Xogbonu, préservant instruments rituels, trônes et appartements royaux.",
           location: "Quartier Honmè",
-          image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80"
-        },
-        {
-          title: "Jardin des Plantes et de la Nature (JPN)",
-          category: "Biodiversité & Sérénité",
-          badge: "Forêt Sacrée Urbaine",
-          desc: "Havre écologique de 3,7 hectares abritant des arbres centenaires sacrés, plantes médicinales et singes à ventre rouge.",
-          location: "Face à l'Assemblée Nationale",
-          image: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=80"
+          image: "https://upload.wikimedia.org/wikipedia/commons/8/8f/Honm%C3%A92.jpg"
         },
         {
           title: "Berges Lagunaires & Quai des Pêcheurs",
@@ -177,7 +169,7 @@ const COMMUNES_DATABASE = {
           badge: "Écotourisme",
           desc: "Promenade paysagère le long de la lagune de Porto-Novo offrant des excursions en pirogue vers les villages lacustres.",
           location: "Berges du Sud de la ville",
-          image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
+          image: "https://upload.wikimedia.org/wikipedia/commons/2/21/Mus%C3%A9e_Honm%C3%A8-Et%C3%A9_1999_%282%29.jpg"
         }
       ],
       circuits: [
@@ -227,7 +219,7 @@ const COMMUNES_DATABASE = {
         hours: "Lun - Ven : 08h00 - 12h30 & 14h00 - 17h30"
       },
       heroImages: [
-        "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=80"
+        "https://upload.wikimedia.org/wikipedia/commons/2/2e/Porte_du_non-retour_au_Benin.jpg"
       ],
       highlights: [
         {
@@ -236,7 +228,7 @@ const COMMUNES_DATABASE = {
           badge: "Patrimoine de l'Humanité",
           desc: "Monument sculptural érigé face à l'Océan marquant l'ultime étape de la déportation des captifs africains lors de la traite.",
           location: "Plage de Djègbadji",
-          image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80"
+          image: "https://upload.wikimedia.org/wikipedia/commons/2/2e/Porte_du_non-retour_au_Benin.jpg"
         },
         {
           title: "Le Temple des Pythons",
@@ -244,7 +236,7 @@ const COMMUNES_DATABASE = {
           badge: "Sanctuaire Sacré",
           desc: "Sanctuaire vivant dédié à Dan, divinité protectrice incarnée par les pythons royaux circulant librement.",
           location: "Face à la Basilique de l'Immaculée Conception",
-          image: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80"
+          image: "https://upload.wikimedia.org/wikipedia/commons/1/11/Entr%C3%A9e_du_Temple_des_Pythons_%28Ouidah%29.jpg"
         },
         {
           title: "La Forêt Sacrée de Kpassè",
@@ -252,15 +244,7 @@ const COMMUNES_DATABASE = {
           badge: "Haut-Lieu Ancestral",
           desc: "Forêt peuplée de sculptures contemporaines monumentales rendant hommage au Roi fondateur Kpassè métamorphosé en iroko.",
           location: "Entrée Nord de Ouidah",
-          image: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=80"
-        },
-        {
-          title: "La Route des Esclaves (4 km)",
-          category: "Pèlerinage Historique",
-          badge: "Chemin Émotionnel",
-          desc: "Parcours mémoriel jalonné par la Place Chacha, l'Arbre de l'Oubli, la Case Zomaï et l'Arbre du Retour.",
-          location: "De la Place Chacha jusqu'à la plage",
-          image: "https://images.unsplash.com/photo-1519999482648-25049ddd37b1?auto=format&fit=crop&w=800&q=80"
+          image: "https://upload.wikimedia.org/wikipedia/commons/5/55/Les_champions_blancs_%C3%A0_la_For%C3%AAt_Sacr%C3%A9e_de_Kpass%C3%A8.jpg"
         }
       ],
       circuits: [
@@ -310,7 +294,7 @@ const COMMUNES_DATABASE = {
         hours: "Lun - Ven : 08h00 - 12h30 & 14h00 - 17h30"
       },
       heroImages: [
-        "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=80"
+        "https://upload.wikimedia.org/wikipedia/commons/b/b0/Royal_Palaces_of_Abomey-133469.jpg"
       ],
       highlights: [
         {
@@ -319,23 +303,23 @@ const COMMUNES_DATABASE = {
           badge: "Classé UNESCO",
           desc: "Complexe royal fondé sous le Roi Houégbadja, orné de bas-reliefs en terre cuite et abritant les trônes royaux montés sur crânes ennemis.",
           location: "Cœur historique d'Abomey",
-          image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80"
+          image: "https://upload.wikimedia.org/wikipedia/commons/b/b0/Royal_Palaces_of_Abomey-133469.jpg"
         },
         {
-          title: "Statue du Roi Béhanzin à Goho",
+          title: "Palais de Simbodji & Bas-Reliefs",
+          category: "Architecture Palatiale",
+          badge: "Trésor Royal",
+          desc: "Bâtiment historique des cours royales d'Abomey préservant les tentures appliquées et emblèmes des souverains.",
+          location: "Enceinte des Palais Royaux",
+          image: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Abomey-Palais_de_Simbodji.jpg"
+        },
+        {
+          title: "Place Goho & Statue de Béhanzin",
           category: "Héros National",
           badge: "Symbole de Résistance",
-          desc: "Monument majestueux représentant l'illustre souverain en geste d'opposition stoïque à la pénétration coloniale.",
-          location: "Place Goho",
-          image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80"
-        },
-        {
-          title: "Village Souterrain d'Agongointo",
-          category: "Archéologie Militaire",
-          badge: "Découverte Unique",
-          desc: "Réseau de galeries et de maisons souterraines de repli creusé au XVIe siècle par les guerriers fon.",
-          location: "Périphérie d'Abomey-Bohicon",
-          image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80"
+          desc: "Monument majestueux représentant l'illustre souverain Béhanzin en geste d'opposition stoïque à la pénétration coloniale.",
+          location: "Place Goho, Abomey",
+          image: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Symbole_de_Behanzin_roi_du_Dahomey_au_mur_de_la_place_Goho_%C3%A0_Abomey_au_B%C3%A9nin2.jpg"
         }
       ],
       circuits: [
@@ -379,32 +363,24 @@ const COMMUNES_DATABASE = {
         hours: "Lun - Ven : 08h00 - 12h30 & 14h00 - 17h30"
       },
       heroImages: [
-        "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=80"
+        "https://upload.wikimedia.org/wikipedia/commons/4/4b/Parakou2.jpg"
       ],
       highlights: [
-        {
-          title: "Musée de Plein Air de Parakou",
-          category: "Ethnographie & Habitat",
-          badge: "Patrimoine Vivant",
-          desc: "Parc paysager reconstituant l'habitat traditionnel des ethnies du Nord (Bariba, Somba, Peulh, Dendi).",
-          location: "Quartier Zongo",
-          image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80"
-        },
         {
           title: "Grand Marché Arzèkè",
           category: "Commerce Régional",
           badge: "Pôle Commercial",
-          desc: "Immense marché couvert moderne où s'échangent coton, karité, ignames, bétail et textiles tissés du Nord.",
+          desc: "Grand marché couvert moderne où s'échangent coton, karité, ignames, textiles et produits du septentrion.",
           location: "Centre des affaires de Parakou",
-          image: "https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=800&q=80"
+          image: "https://upload.wikimedia.org/wikipedia/commons/9/94/March%C3%A9_Arz%C3%A8k%C3%A8_Parakou.jpg"
         },
         {
-          title: "Place Tabera & Rond-Point Hubert Maga",
-          category: "Repères Urbains",
+          title: "Cité Métropolitaine de Parakou",
+          category: "Urbanisme & Carrefour",
           badge: "Cœur Citadin",
-          desc: "Monuments rendant hommage au premier président du Bénin et célébrant la fraternité des peuples du septentrion.",
-          location: "Avenue Centrale",
-          image: "https://images.unsplash.com/photo-1519999482648-25049ddd37b1?auto=format&fit=crop&w=800&q=80"
+          desc: "Carrefour ferroviaire et routier stratégique reliant le Sud maritime aux grands corridors du Sahel.",
+          location: "Centre-ville de Parakou",
+          image: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Parakou2.jpg"
         }
       ],
       circuits: [
@@ -448,24 +424,24 @@ const COMMUNES_DATABASE = {
         hours: "Lun - Ven : 08h00 - 12h30 & 14h00 - 17h30"
       },
       heroImages: [
-        "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=80"
+        "https://upload.wikimedia.org/wikipedia/commons/d/d9/Cavali%C3%A8re_dans_l%27ar%C3%A8ne_imp%C3%A9riale_de_Nikki_Gaani_2026_05.jpg"
       ],
       highlights: [
         {
-          title: "Palais Impérial de l'Empereur Sina Boko",
-          category: "Tradition & Pouvoir Ancestral",
-          badge: "Siège Royal",
-          desc: "Palais séculaire où réside la cour impériale bariba, rythmé par le conseil des dignitaires et les trompes royales Kakaki.",
-          location: "Centre historique de Nikki",
-          image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80"
+          title: "Cavalerie & Arène de la Gaani",
+          category: "Fête Équestre Mondiale",
+          badge: "Patrimoine Vivant",
+          desc: "Grandes parades des cavaliers caparaçonnés et cavalières émérites exécutant des prouesses devant la tribune impériale.",
+          location: "Arène Royale de Nikki",
+          image: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Cavali%C3%A8re_dans_l%27ar%C3%A8ne_imp%C3%A9riale_de_Nikki_Gaani_2026_05.jpg"
         },
         {
-          title: "Arène Royale de la Gaani",
-          category: "Fête Équestre Mondiale",
+          title: "Fêtes Rituelles de la Gaani",
+          category: "Tradition & Cour Impériale",
           badge: "Événement Majeur",
-          desc: "Espace solennel des grandes parades de cavaliers caparaçonnés exécutant des prouesses devant la tribune impériale.",
-          location: "Face au Palais Impérial",
-          image: "https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=800&q=80"
+          desc: "Rassemblement séculaire des dignitaires et des peuples du Grand Borgou au son des trompes royales Kakaki.",
+          location: "Centre historique de Nikki",
+          image: "https://upload.wikimedia.org/wikipedia/commons/5/56/Salutations_de_fid%C3%A8les_lors_de_la_Gaani_2026_%C3%A0_Nikki_02.jpg"
         }
       ],
       circuits: [
@@ -515,7 +491,7 @@ const COMMUNES_DATABASE = {
         hours: "Lun - Ven : 08h00 - 12h30 & 14h00 - 17h30"
       },
       heroImages: [
-        "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=80"
+        "https://upload.wikimedia.org/wikipedia/commons/4/40/Les_cases_de_Tata_Somba_%C3%A0_Natitingou.jpg"
       ],
       highlights: [
         {
@@ -524,23 +500,23 @@ const COMMUNES_DATABASE = {
           badge: "Patrimoine Mondial",
           desc: "Habitations traditionnelles fortifiées à deux étages, véritables forteresses d'argile conçues pour la défense et la vie familiale.",
           location: "Pays Otammari / Boukoumbé - Natitingou",
-          image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80"
+          image: "https://upload.wikimedia.org/wikipedia/commons/4/40/Les_cases_de_Tata_Somba_%C3%A0_Natitingou.jpg"
         },
         {
           title: "Chutes d'eau de Kota",
           category: "Écotourisme & Fraîcheur",
           badge: "Site Naturel",
-          desc: "Cascade spectaculaire nichée dans un cirque boisé, idéale pour la baignade rafraîchissante et les pique-niques nature.",
+          desc: "Cascade spectaculaire nichée dans un cirque boisé de l'Atacora, haut-lieu de fraîcheur et de randonnée.",
           location: "À 15 km au sud de Natitingou",
-          image: "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=800&q=80"
+          image: "https://upload.wikimedia.org/wikipedia/commons/b/bd/Au_c%C5%93ur_des_chutes_de_KOTA_de_Natitingou_12.jpg"
         },
         {
-          title: "Musée des Arts et Traditions Populaires",
-          category: "Culture Otammari",
-          badge: "Musée Régional",
-          desc: "Installé dans l'ancien bâtiment colonial de la préfecture, il retrace les rites d'initiation et la vie matérielle de l'Atacora.",
-          location: "Centre-ville de Natitingou",
-          image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80"
+          title: "Parc National de la Pendjari",
+          category: "Grande Réserve de Biosphère",
+          badge: "Faune & Flore Sauvage",
+          desc: "Plus grande réserve naturelle préservée d'Afrique de l'Ouest abritant éléphants, lions, guépards et buffles.",
+          location: "Accès via Natitingou / Tanguiéta",
+          image: "https://upload.wikimedia.org/wikipedia/commons/b/bb/Parc_national_de_la_Pendjari.JPG"
         }
       ],
       circuits: [

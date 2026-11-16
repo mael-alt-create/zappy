@@ -17,81 +17,59 @@
 </head>
 <body>
 
-  <!-- 1. Bandeau Supérieur Institutionnel & Alertes -->
-  <div class="top-bar-emergency">
-    <div class="container top-bar-inner">
-      <div style="display: flex; align-items: center; gap: 1rem;">
-        <span class="official-stamp">
-          <span class="flag-benin">
+  <!-- Navigation Header : Minimaliste, Aéré & Épuré (Inspiré Modern Web Guidance & Emil Kowalski) -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <!-- Identité Communale & Sélecteur Subtil en 1 Clic -->
+      <div class="brand-group">
+        <a href="#accueil" class="brand-wrapper" title="Accueil Mairie">
+          <span class="flag-benin" title="République du Bénin">
             <span class="flag-g"></span>
             <span class="flag-yr">
               <span class="flag-y"></span>
               <span class="flag-r"></span>
             </span>
           </span>
-          RÉPUBLIQUE DU BÉNIN • PORTAIL TERRITORIAL OFFICIEL • TEMPLATE ATATA
-        </span>
-        <span style="opacity: 0.6;">|</span>
-        <span style="font-size: 0.8rem; color: #86EFAC;">
-          Département du <strong data-bind="commune-department">Littoral</strong>
-        </span>
+          <div class="brand-text">
+            <span class="brand-main">Mairie de <strong data-bind="commune-name">Cotonou</strong></span>
+            <span class="brand-sub" data-bind="commune-status-badge">Capitale Économique</span>
+          </div>
+        </a>
+
+        <!-- Sélecteur de Commune intégré subtilement -->
+        <button class="commune-pill-btn" id="customizer-toggle-btn" title="Changer de commune béninoise">
+          <span>Changer</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
       </div>
 
-      <div style="display: flex; align-items: center; gap: 1.25rem;">
-        <span style="font-size: 0.8rem; display: flex; align-items: center; gap: 0.4rem;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          Urgences : Police 166 | SAMU 130 | Pompiers 118
-        </span>
-        <a href="#allo-mairie" class="hero-tag" style="background: rgba(255,255,255,0.2);">Allô Mairie</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- 2. En-tête de Navigation Sticky -->
-  <header class="site-header">
-    <div class="container nav-container">
-      <a href="#" class="brand-wrapper">
-        <div class="brand-seal-mini" id="nav-brand-seal">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-theme)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <div class="brand-text">
-          <h1>Mairie de <span data-bind="commune-name">Cotonou</span></h1>
-          <p data-bind="commune-status-badge">Capitale Économique</p>
-        </div>
-      </a>
-
-      <!-- Liens de navigation desktop -->
-      <nav>
+      <!-- Navigation Centrale Épurée : 3 Volets Clairs & Intuitifs -->
+      <nav class="nav-center">
         <ul class="nav-links">
-          <li><a href="#accueil" class="nav-link active">Accueil</a></li>
-          <li><a href="#demarches" class="nav-link">e-Services Citoyens</a></li>
+          <li><a href="#demarches" class="nav-link">Démarches Citoyennes</a></li>
           <li><a href="#tourisme" class="nav-link">Découvrir la Ville</a></li>
-          <li><a href="#gouvernance" class="nav-link">Maire & SE</a></li>
-          <li><a href="#allo-mairie" class="nav-link">Signaler un Incident</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="#gouvernance" class="nav-link">Vie Municipale</a></li>
         </ul>
       </nav>
 
-      <!-- Actions rapides en-tête -->
+      <!-- Actions Droites Essentielles -->
       <div class="nav-actions">
-        <!-- Bouton sélecteur de commune rapide -->
-        <button class="commune-switcher-btn" id="customizer-toggle-btn" title="Changer de commune béninoise">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          <span data-bind="commune-name">Cotonou</span> ▾
-        </button>
-
-        <!-- Recherche rapide ⌘K -->
-        <button class="btn btn-icon search-trigger-btn" title="Recherche rapide (Ctrl + K)">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <!-- Recherche Globale (⌘K) -->
+        <button class="search-pill-btn search-trigger-btn" title="Rechercher une démarche ou un lieu (Ctrl + K)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <span class="search-label">Recherche</span>
+          <kbd class="search-kbd">⌘K</kbd>
         </button>
 
         <!-- Bascule Sombre/Clair -->
-        <button class="btn btn-icon" id="theme-toggle-btn" title="Basculer le mode sombre">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <button class="btn btn-icon btn-subtle" id="theme-toggle-btn" title="Mode sombre / clair">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
 
-        <a href="#demarches" class="btn btn-accent btn-magnetic" style="font-size: 0.85rem; padding: 0.5rem 1rem;">
-          Guichet Unique
+        <!-- Action Citoyenne : Allô Mairie -->
+        <a href="#allo-mairie" class="btn btn-primary btn-sm btn-magnetic">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>Allô Mairie</span>
         </a>
       </div>
     </div>
@@ -108,6 +86,8 @@
             <span data-bind="commune-status">Commune à statut particulier</span>
           </span>
           <span class="hero-badge">Département du <span data-bind="commune-department">Littoral</span></span>
+          <span class="hero-badge" style="background: rgba(0,0,0,0.25); border-color: rgba(255,255,255,0.15);">Urgences : Police 166 | SAMU 130 | Pompiers 118</span>
+        </div>
         </div>
 
         <h1 class="hero-title">
