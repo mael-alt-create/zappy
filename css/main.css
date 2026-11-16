@@ -1,0 +1,1126 @@
+/**
+ * main.css
+ * Système de design complet du Template des Communes du Bénin 🇧🇯
+ * Architecture en variables CSS réactives pour personnalisation multi-communes (Theme Switcher)
+ */
+
+:root {
+  /* Variables Thématiques Territoriales (Modifiables dynamiquement par JS) */
+  --primary-theme: #059669; /* Vert Bénin par défaut */
+  --primary-hover: #047857;
+  --primary-subtle: rgba(5, 150, 105, 0.08);
+  --primary-border: rgba(5, 150, 105, 0.25);
+  --primary-accent: #F59E0B; /* Jaune or */
+  --bg-gradient: linear-gradient(135deg, #064E3B 0%, #065F46 50%, #0F766E 100%);
+  --badge-bg: #065F46;
+
+  /* Couleurs Fondamentales Mode Clair */
+  --bg-page: #F8FAFC;
+  --bg-surface: #FFFFFF;
+  --bg-surface-elevated: #FFFFFF;
+  --bg-surface-muted: #F1F5F9;
+  --text-main: #0F172A;
+  --text-muted: #64748B;
+  --text-subtle: #94A3B8;
+  --border-light: #E2E8F0;
+  --border-subtle: rgba(0, 0, 0, 0.06);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.03);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+
+  /* Typographie & Rayons */
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, Cambria, 'Times New Roman', serif;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Espacements */
+  --container-max: 1280px;
+}
+
+/* Mode Sombre */
+[data-theme="dark"] {
+  --bg-page: #0B0F19;
+  --bg-surface: #111827;
+  --bg-surface-elevated: #1F2937;
+  --bg-surface-muted: #1E293B;
+  --text-main: #F8FAFC;
+  --text-muted: #94A3B8;
+  --text-subtle: #64748B;
+  --border-light: #1E293B;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+/* Conteneur Global */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* 1. Barre Supérieure Institutionnelle & Alertes */
+.top-bar-emergency {
+  background: #022C22;
+  color: #D1FAE5;
+  font-size: 0.825rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.top-bar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.official-stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.flag-benin {
+  display: inline-flex;
+  width: 18px;
+  height: 12px;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+}
+.flag-benin .flag-g { width: 40%; background: #008751; height: 100%; }
+.flag-benin .flag-yr { width: 60%; display: flex; flex-direction: column; height: 100%; }
+.flag-benin .flag-y { height: 50%; background: #FCD116; }
+.flag-benin .flag-r { height: 50%; background: #E8112D; }
+
+/* 2. En-tête Sticky & Navigation */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(14px) saturate(180%);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background-color 200ms ease;
+}
+
+[data-theme="dark"] .site-header {
+  background: rgba(17, 24, 39, 0.85);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  gap: 1rem;
+}
+
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  text-decoration: none;
+  color: var(--text-main);
+}
+
+.brand-seal-mini {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--bg-surface-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.brand-text h1 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.brand-text p {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 150ms ease;
+  position: relative;
+  padding: 0.4rem 0;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary-theme);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--primary-theme);
+  border-radius: var(--radius-full);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* 3. Sélecteur de Commune Rapide (Switcher) */
+.commune-switcher-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.875rem;
+  background: var(--primary-subtle);
+  color: var(--primary-theme);
+  border: 1px solid var(--primary-border);
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 160ms ease;
+}
+
+.commune-switcher-btn:hover {
+  background: var(--primary-theme);
+  color: #FFFFFF;
+}
+
+/* 4. Boutons Standard & Tactiles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 160ms var(--ease-snappy);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--primary-theme);
+  color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.25);
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.35);
+}
+
+.btn-secondary {
+  background: var(--bg-surface);
+  color: var(--text-main);
+  border-color: var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-surface-muted);
+}
+
+.btn-accent {
+  background: var(--primary-accent);
+  color: #0F172A;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.25);
+}
+
+.btn-icon {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: var(--radius-md);
+  background: var(--bg-surface-muted);
+  color: var(--text-main);
+  border: 1px solid var(--border-subtle);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* 5. Hero Section Immersive */
+.hero-section {
+  position: relative;
+  background: var(--bg-gradient);
+  color: #FFFFFF;
+  padding: 4.5rem 0 5rem 0;
+  overflow: hidden;
+}
+
+.hero-pattern-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 3.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hero-badge-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-title {
+  font-size: 3.25rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.hero-title span {
+  color: var(--primary-accent);
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 620px;
+}
+
+/* Barre de recherche instantanée Hero */
+.hero-search-box {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 0.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+[data-theme="dark"] .hero-search-box {
+  background: rgba(31, 41, 55, 0.95);
+}
+
+.hero-search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  outline: none;
+}
+
+.hero-quick-tags {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.hero-quick-tags span {
+  font-weight: 600;
+}
+
+.hero-tag {
+  background: rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: background 150ms ease;
+}
+
+.hero-tag:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Carte Armoiries 3D Interactive (Hero Right) */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shield-card {
+  width: 320px;
+  height: 420px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+}
+
+.shield-icon-wrapper {
+  width: 140px;
+  height: 140px;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+}
+
+.shield-commune-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.shield-devise {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 0.25rem;
+}
+
+.shield-stat-badge {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* 6. Bandeau de Chiffres Clés Territoriaux */
+.stats-banner {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-light);
+  padding: 2rem 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  border-left: 3px solid var(--primary-theme);
+  padding-left: 1.25rem;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* 7. Section Guichet Unique des Démarches */
+.section {
+  padding: 5rem 0;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem auto;
+}
+
+.section-tag {
+  color: var(--primary-theme);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
+.section-desc {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+}
+
+/* Onglets de filtrage avec Spring Slider */
+.tabs-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.tabs-nav {
+  position: relative;
+  display: inline-flex;
+  background: var(--bg-surface-muted);
+  padding: 4px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-subtle);
+}
+
+.tab-btn {
+  position: relative;
+  z-index: 1;
+  padding: 0.55rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: var(--radius-full);
+  transition: color 150ms ease;
+}
+
+.tab-btn.active {
+  color: #FFFFFF;
+}
+
+/* Grille de cartes Démarches */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 1.75rem;
+}
+
+.procedure-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+
+.procedure-card:hover {
+  border-color: var(--primary-border);
+  box-shadow: var(--shadow-md);
+}
+
+.procedure-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.procedure-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  background: var(--primary-subtle);
+  color: var(--primary-theme);
+}
+
+.procedure-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.3;
+}
+
+.procedure-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.procedure-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.procedure-requirements {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  background: var(--bg-surface-muted);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+}
+
+.procedure-requirements ul {
+  padding-left: 1.2rem;
+  margin-top: 0.35rem;
+}
+
+/* 8. Bento Grid Tourisme & Trésors Territoriaux */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 340px;
+  gap: 1.5rem;
+}
+
+.bento-card {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  text-decoration: none;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem;
+}
+
+.bento-card-lg {
+  grid-column: span 2;
+}
+
+.bento-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 600ms var(--ease-snappy);
+  z-index: 0;
+}
+
+.bento-card:hover .bento-bg {
+  transform: scale(1.05);
+}
+
+.bento-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.85) 100%);
+  z-index: 1;
+}
+
+.bento-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.bento-tag {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--primary-accent);
+  color: #0F172A;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+}
+
+.bento-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.bento-desc {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 9. Section Gouvernance & Réforme 2022 */
+.governance-section {
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.governance-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.executive-duo-card {
+  background: var(--bg-surface-muted);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-subtle);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.executive-person {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.person-avatar {
+  width: 68px;
+  height: 68px;
+  border-radius: var(--radius-full);
+  background: var(--primary-theme);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  border: 3px solid var(--bg-surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.person-info h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.person-info p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.badge-role {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  background: var(--primary-subtle);
+  color: var(--primary-theme);
+  margin-top: 0.25rem;
+}
+
+/* 10. Module Signalement "Allô Mairie" */
+.report-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.report-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.report-type-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  padding: 1.25rem 1rem;
+  background: var(--bg-surface-muted);
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 150ms ease;
+  color: var(--text-main);
+}
+
+.report-type-btn:hover,
+.report-type-btn.active {
+  background: var(--primary-subtle);
+  border-color: var(--primary-theme);
+  color: var(--primary-theme);
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--text-main);
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  background: var(--bg-surface-muted);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  color: var(--text-main);
+  outline: none;
+  transition: border-color 150ms ease;
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+  border-color: var(--primary-theme);
+  background: var(--bg-surface);
+}
+
+/* 11. Command Palette (⌘K) */
+.command-palette-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(6px);
+  z-index: 100;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 10vh;
+}
+
+.command-palette-dialog {
+  width: 100%;
+  max-width: 640px;
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+}
+
+.command-palette-input-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border-light);
+  gap: 0.75rem;
+}
+
+.command-palette-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  font-size: 1.05rem;
+  color: var(--text-main);
+  outline: none;
+}
+
+.command-palette-results {
+  max-height: 380px;
+  overflow-y: auto;
+  padding: 0.5rem;
+}
+
+.command-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  color: var(--text-main);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 100ms ease;
+}
+
+.command-item:hover,
+.command-item.focused {
+  background: var(--primary-subtle);
+  color: var(--primary-theme);
+}
+
+/* 12. Floating Theme Customizer Panel */
+.floating-theme-pill {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 45;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #0F172A;
+  color: #FFFFFF;
+  padding: 0.6rem 1.15rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: transform 180ms var(--ease-snappy);
+}
+
+.floating-theme-pill:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.customizer-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 360px;
+  background: var(--bg-surface);
+  border-left: 1px solid var(--border-light);
+  box-shadow: var(--shadow-xl);
+  z-index: 90;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  overflow-y: auto;
+}
+
+.customizer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.commune-select-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.commune-card-btn {
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  background: var(--bg-surface-muted);
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
+  transition: all 120ms ease;
+}
+
+.commune-card-btn.active,
+.commune-card-btn:hover {
+  border-color: var(--primary-theme);
+  background: var(--primary-subtle);
+  color: var(--primary-theme);
+}
+
+/* 13. Pied de Page (Footer) */
+.site-footer {
+  background: #022C22;
+  color: #E2E8F0;
+  padding: 4.5rem 0 2rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 3rem;
+  margin-bottom: 3.5rem;
+}
+
+.footer-brand h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 0.75rem;
+}
+
+.footer-brand p {
+  color: #94A3B8;
+  font-size: 0.9rem;
+  max-width: 360px;
+}
+
+.footer-col h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-links a {
+  color: #94A3B8;
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 120ms ease;
+}
+
+.footer-links a:hover {
+  color: var(--primary-accent);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #94A3B8;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .bento-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .bento-card-lg {
+    grid-column: span 1;
+  }
+  .governance-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .hero-title {
+    font-size: 2.25rem;
+  }
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}

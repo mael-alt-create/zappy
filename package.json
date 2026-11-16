@@ -1,0 +1,21 @@
+{
+  "name": "atata-communes-benin",
+  "version": "1.0.0",
+  "description": "Atata — Template officiel et réutilisable pour les sites web des Communes du Bénin 🇧🇯",
+  "main": "serve.js",
+  "scripts": {
+    "start": "node serve.js",
+    "deploy": "wrangler pages deploy ."
+  },
+  "keywords": [
+    "benin",
+    "communes",
+    "atata",
+    "template",
+    "wordpress",
+    "government",
+    "civic-tech"
+  ],
+  "author": "Antigravity Team",
+  "license": "GPL-2.0"
+}

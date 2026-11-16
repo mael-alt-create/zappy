@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Atata — Template officiel et réutilisable pour les sites web des Communes du Bénin 🇧🇯. Conforme aux standards Modern Web Guidance et à la réforme de la décentralisation.">
+  <title>Atata 🇧🇯 — Portail & Template Officiel des Communes du Bénin</title>
+
+  <!-- Google Fonts préchargées (Modern Typography) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Feuilles de styles -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- 1. Bandeau Supérieur Institutionnel & Alertes -->
+  <div class="top-bar-emergency">
+    <div class="container top-bar-inner">
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <span class="official-stamp">
+          <span class="flag-benin">
+            <span class="flag-g"></span>
+            <span class="flag-yr">
+              <span class="flag-y"></span>
+              <span class="flag-r"></span>
+            </span>
+          </span>
+          RÉPUBLIQUE DU BÉNIN • PORTAIL TERRITORIAL OFFICIEL • TEMPLATE ATATA
+        </span>
+        <span style="opacity: 0.6;">|</span>
+        <span style="font-size: 0.8rem; color: #86EFAC;">
+          Département du <strong data-bind="commune-department">Littoral</strong>
+        </span>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 1.25rem;">
+        <span style="font-size: 0.8rem; display: flex; align-items: center; gap: 0.4rem;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Urgences : Police 166 | SAMU 130 | Pompiers 118
+        </span>
+        <a href="#allo-mairie" class="hero-tag" style="background: rgba(255,255,255,0.2);">Allô Mairie</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. En-tête de Navigation Sticky -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#" class="brand-wrapper">
+        <div class="brand-seal-mini" id="nav-brand-seal">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-theme)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="brand-text">
+          <h1>Mairie de <span data-bind="commune-name">Cotonou</span></h1>
+          <p data-bind="commune-status-badge">Capitale Économique</p>
+        </div>
+      </a>
+
+      <!-- Liens de navigation desktop -->
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#accueil" class="nav-link active">Accueil</a></li>
+          <li><a href="#demarches" class="nav-link">e-Services Citoyens</a></li>
+          <li><a href="#tourisme" class="nav-link">Découvrir la Ville</a></li>
+          <li><a href="#gouvernance" class="nav-link">Maire & SE</a></li>
+          <li><a href="#allo-mairie" class="nav-link">Signaler un Incident</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Actions rapides en-tête -->
+      <div class="nav-actions">
+        <!-- Bouton sélecteur de commune rapide -->
+        <button class="commune-switcher-btn" id="customizer-toggle-btn" title="Changer de commune béninoise">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span data-bind="commune-name">Cotonou</span> ▾
+        </button>
+
+        <!-- Recherche rapide ⌘K -->
+        <button class="btn btn-icon search-trigger-btn" title="Recherche rapide (Ctrl + K)">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+
+        <!-- Bascule Sombre/Clair -->
+        <button class="btn btn-icon" id="theme-toggle-btn" title="Basculer le mode sombre">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+
+        <a href="#demarches" class="btn btn-accent btn-magnetic" style="font-size: 0.85rem; padding: 0.5rem 1rem;">
+          Guichet Unique
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. Hero Section Immersive & Territoriale -->
+  <section class="hero-section" id="accueil">
+    <div class="hero-pattern-overlay"></div>
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge-group">
+          <span class="hero-badge pulse-badge">
+            <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #F59E0B;"></span>
+            <span data-bind="commune-status">Commune à statut particulier</span>
+          </span>
+          <span class="hero-badge">Département du <span data-bind="commune-department">Littoral</span></span>
+        </div>
+
+        <h1 class="hero-title">
+          Bienvenue à <br>
+          <span data-bind="commune-name">Cotonou</span>
+        </h1>
+
+        <p class="hero-subtitle" data-bind="commune-slogan">
+          Métropole d'Avenir et Porte Océane de l'Afrique de l'Ouest
+        </p>
+
+        <p style="font-size: 0.95rem; color: rgba(255,255,255,0.85); line-height: 1.6;" data-bind="commune-description">
+          Poumon économique du Bénin, Cotonou est une métropole vibrante bordée par l'Océan Atlantique et le lac Nokoué.
+        </p>
+
+        <!-- Barre de recherche rapide de démarches intégrée au Hero -->
+        <div class="hero-search-box">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2" style="margin-left: 0.5rem;"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" class="hero-search-input search-trigger-btn" placeholder="Quelle démarche ou information recherchez-vous ? (ex: Acte de naissance, Permis de construire...)" readonly>
+          <button class="btn btn-primary search-trigger-btn">
+            Rechercher
+            <kbd style="font-size: 0.7rem; background: rgba(255,255,255,0.25); padding: 0.15rem 0.4rem; border-radius: 4px;">⌘K</kbd>
+          </button>
+        </div>
+
+        <!-- Mots-clés rapides -->
+        <div class="hero-quick-tags">
+          <span>Accès rapide :</span>
+          <a href="#demarches" class="hero-tag">Acte sécurisé (ANIP)</a>
+          <a href="#demarches" class="hero-tag">Permis de construire</a>
+          <a href="#allo-mairie" class="hero-tag">Signaler un trou</a>
+          <a href="#tourisme" class="hero-tag">Visiter la ville</a>
+        </div>
+      </div>
+
+      <!-- Visuel Interactif 3D : Blason & Armoiries (Vectoriel & Specular Sheen) -->
+      <div class="hero-visual">
+        <div id="interactive-shield-container">
+          <div class="shield-card" id="municipal-shield">
+            <div id="shield-sheen"></div>
+            
+            <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; color: rgba(255,255,255,0.8);">
+              Armoiries Officielles
+            </div>
+
+            <!-- Conteneur SVG Dynamique des Armoiries -->
+            <div class="shield-icon-wrapper" id="municipal-shield-svg-wrapper">
+              <!-- Rendu par JS -->
+            </div>
+
+            <div>
+              <div class="shield-commune-name" data-bind="commune-name">Cotonou</div>
+              <div class="shield-devise" data-bind="commune-status-badge">Capitale Économique</div>
+            </div>
+
+            <div class="shield-stat-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <span>Portail Certifié 2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Bandeau de Chiffres Clés Territoriaux (Interpolation Spring) -->
+  <section class="stats-banner">
+    <div class="container stats-grid">
+      <div class="stat-item">
+        <div class="stat-number" id="stat-pop" data-counter-target="1250000">1 250 000</div>
+        <div class="stat-label">Population estimée</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" id="stat-sup" data-counter-target="79">79 km²</div>
+        <div class="stat-label">Superficie territoriale</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" id="stat-arr" data-counter-target="13">13</div>
+        <div class="stat-label">Arrondissements communaux</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" id="stat-sat" data-counter-target="94.8" data-counter-suffix="%">94.8%</div>
+        <div class="stat-label">Taux de satisfaction e-Services</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Guichet Unique des Démarches Citoyennes -->
+  <section class="section" id="demarches">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Guichet Unique Numérique</span>
+        <h2 class="section-title">Vos Démarches Administratives en Ligne</h2>
+        <p class="section-desc">
+          Accédez aux services publics dématérialisés de la mairie et de l'État béninois (ANIP, service-public.bj). Simulez vos pièces et suivez votre dossier.
+        </p>
+      </div>
+
+      <!-- Onglets interactifs avec indicateur coulissant (Spring Slider) -->
+      <div class="tabs-container">
+        <div class="tabs-nav">
+          <div class="tab-indicator" id="tab-slider-indicator"></div>
+          <button class="tab-btn active" data-tab="all">Toutes les démarches</button>
+          <button class="tab-btn" data-tab="etat-civil">État Civil</button>
+          <button class="tab-btn" data-tab="citoyennete">Citoyenneté & Légalisation</button>
+          <button class="tab-btn" data-tab="urbanisme">Urbanisme & Foncier</button>
+          <button class="tab-btn" data-tab="economie">Commerces & Affaires</button>
+        </div>
+      </div>
+
+      <!-- Grille dynamique des démarches -->
+      <div class="cards-grid" id="procedures-grid">
+        <!-- Rendu par JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Trésors Territoriaux & Tourisme (Inspiré de VisitGuernica, Chania & Pas-de-Calais) -->
+  <section class="section" id="tourisme" style="background: var(--bg-surface-muted);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Tourisme, Culture & Patrimoine</span>
+        <h2 class="section-title">Explorer les Trésors de <span data-bind="commune-name">Cotonou</span></h2>
+        <p class="section-desc">
+          Une immersion visuelle dans les sites historiques, sanctuaires vivants, espaces naturels et circuits mémoriels emblématiques.
+        </p>
+      </div>
+
+      <!-- Bento Grid Immersive -->
+      <div class="bento-grid" id="bento-highlights-container">
+        <!-- Rendu par JS -->
+      </div>
+
+      <!-- Circuits touristiques recommandés -->
+      <div style="margin-top: 3.5rem;">
+        <h3 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary-theme)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+          Circuits Touristiques Conseillés
+        </h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;" id="circuits-container">
+          <!-- Rendu par JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Gouvernance Locale & Réforme de la Décentralisation (2022) -->
+  <section class="section governance-section" id="gouvernance">
+    <div class="container governance-grid">
+      <div>
+        <span class="section-tag">Gouvernance Locale Réformée</span>
+        <h2 class="section-title" style="margin-bottom: 1rem;">
+          L'Équipe Dirigeante & L'Administration Communale
+        </h2>
+        <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 1.5rem;">
+          Conformément au <strong>Code de l'Administration Territoriale du Bénin</strong>, la gouvernance communale repose sur une séparation claire des pouvoirs politiques et de la gestion administrative et financière.
+        </p>
+
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+            <div style="width: 24px; height: 24px; border-radius: 50%; background: var(--primary-subtle); color: var(--primary-theme); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 700; font-size: 0.8rem;">1</div>
+            <div>
+              <strong style="color: var(--text-main);">Le Conseil Communal & Le Maire</strong>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Organe délibérant et d'orientation politique représentant les citoyens et votant les délibérations.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+            <div style="width: 24px; height: 24px; border-radius: 50%; background: var(--primary-subtle); color: var(--primary-theme); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 700; font-size: 0.8rem;">2</div>
+            <div>
+              <strong style="color: var(--text-main);">Le Secrétaire Exécutif (SE)</strong>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Ordonnateur unique du budget, garant de la légalité, de la gestion des marchés publics et des ressources humaines.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+            <div style="width: 24px; height: 24px; border-radius: 50%; background: var(--primary-subtle); color: var(--primary-theme); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 700; font-size: 0.8rem;">3</div>
+            <div>
+              <strong style="color: var(--text-main);">Les Directions Techniques</strong>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Services Techniques (DST), Affaires Domaniales (DADE), Finances (DAF) et Systèmes d'Information (DSI).</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 2rem;">
+          <button class="btn btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            Consulter le Plan de Développement Communal (PDC 4)
+          </button>
+        </div>
+      </div>
+
+      <!-- Duo Exécutif (Maire & SE) -->
+      <div class="executive-duo-card">
+        <!-- Carte Maire -->
+        <div class="executive-person">
+          <div class="person-avatar">M</div>
+          <div class="person-info">
+            <span class="badge-role">Autorité Politique</span>
+            <h4 data-bind="commune-mayor">Luc Sètondji ATROKPO</h4>
+            <p data-bind="commune-mayor-title">Maire de la Commune de Cotonou</p>
+          </div>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid var(--border-light);">
+
+        <!-- Carte Secrétaire Exécutif -->
+        <div class="executive-person">
+          <div class="person-avatar" style="background: var(--text-main);">SE</div>
+          <div class="person-info">
+            <span class="badge-role" style="background: rgba(245, 158, 11, 0.15); color: #B45309;">Administration & Finances</span>
+            <h4 data-bind="commune-se">Ange Paterne AMOUSSOUGAN</h4>
+            <p data-bind="commune-se-title">Secrétaire Exécutif de la Mairie</p>
+          </div>
+        </div>
+
+        <!-- Budget & Transparence -->
+        <div style="background: var(--bg-surface); padding: 1rem 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Budget Exercice 2026</div>
+            <div style="font-size: 1rem; font-weight: 700; color: var(--primary-theme);" data-bind="commune-budget">24.6 Milliards FCFA</div>
+          </div>
+          <span style="font-size: 0.75rem; background: #DCFCE7; color: #15803D; padding: 0.2rem 0.6rem; border-radius: var(--radius-full); font-weight: 600;">Certifié CONAFIL</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Signalement Citoyen "Allô Mairie / Ma Commune Propre" -->
+  <section class="section" id="allo-mairie">
+    <div class="container" style="max-width: 900px;">
+      <div class="section-header">
+        <span class="section-tag">Participation & Démocratie de Proximité</span>
+        <h2 class="section-title">Allô Mairie : Signaler une Anomalie</h2>
+        <p class="section-desc">
+          Contribuez à embellir et sécuriser <span data-bind="commune-name">Cotonou</span>. Nids-de-poule, lampadaire défectueux ou déchet encombrant : alertez directement les services techniques.
+        </p>
+      </div>
+
+      <div class="report-card">
+        <form id="incident-report-form">
+          <label class="form-label" style="margin-bottom: 0.75rem;">1. Sélectionnez le type d'incident :</label>
+          <div class="report-grid">
+            <button type="button" class="report-type-btn active" data-incident="voirie">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19L19 4"/><path d="M4 4l16 16"/></svg>
+              <span>Voirie & Trous</span>
+            </button>
+            <button type="button" class="report-type-btn" data-incident="eclairage">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+              <span>Éclairage Public</span>
+            </button>
+            <button type="button" class="report-type-btn" data-incident="salubrite">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+              <span>Dépotoir Sauvage</span>
+            </button>
+            <button type="button" class="report-type-btn" data-incident="inondation">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 16.2A4.5 4.5 0 0 0 17.5 8h-1.8A7 7 0 1 0 4 14.9"/><polyline points="16 14 12 18 8 14"/><line x1="12" y1="12" x2="12" y2="21"/></svg>
+              <span>Caniveau / Eau</span>
+            </button>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="incident-location">2. Localisation précise dans la commune :</label>
+            <input type="text" id="incident-location" class="form-input" placeholder="Ex: Arrondissement 5, Carrefour Sainte-Rita, Rue 244" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="incident-desc">3. Description du problème :</label>
+            <textarea id="incident-desc" class="form-textarea" rows="3" placeholder="Décrivez succinctement la gêne constatée pour faciliter l'intervention de l'équipe municipale."></textarea>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+            <div style="font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.4rem;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Signalement anonymisé et transmis à la Direction des Services Techniques (DST)
+            </div>
+            <button type="submit" class="btn btn-primary btn-magnetic" style="padding: 0.75rem 1.75rem;">
+              Transmettre le signalement
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Pied de Page Institutionnel (Footer) -->
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3 style="display: flex; align-items: center; gap: 0.5rem;">
+          <span class="flag-benin">
+            <span class="flag-g"></span>
+            <span class="flag-yr">
+              <span class="flag-y"></span>
+              <span class="flag-r"></span>
+            </span>
+          </span>
+          Mairie de <span data-bind="commune-name">Cotonou</span>
+        </h3>
+        <p data-bind="commune-slogan">
+          Métropole d'Avenir et Porte Océane de l'Afrique de l'Ouest
+        </p>
+        <div style="margin-top: 1.25rem; font-size: 0.85rem; color: #94A3B8; display: flex; flex-direction: column; gap: 0.4rem;">
+          <div>📍 <span data-bind="commune-address">Hôtel de Ville, Place du Souvenir, Cotonou</span></div>
+          <div>📞 <span data-bind="commune-phone">+229 21 30 11 20</span></div>
+          <div>✉️ <span data-bind="commune-email">contact@cotonou.mairie.bj</span></div>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Citoyenneté</h4>
+        <ul class="footer-links">
+          <li><a href="#demarches">Extrait de Naissance (ANIP)</a></li>
+          <li><a href="#demarches">Certificat de Résidence</a></li>
+          <li><a href="#demarches">Permis de Construire</a></li>
+          <li><a href="#demarches">Mariage Civil</a></li>
+          <li><a href="#demarches">Légalisation Express</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Territoire</h4>
+        <ul class="footer-links">
+          <li><a href="#tourisme">Patrimoine & Monuments</a></li>
+          <li><a href="#tourisme">Circuits Touristiques</a></li>
+          <li><a href="#gouvernance">Le Maire & Le Conseil</a></li>
+          <li><a href="#gouvernance">Secrétariat Exécutif</a></li>
+          <li><a href="#allo-mairie">Signaler une anomalie</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Portails Nationaux</h4>
+        <ul class="footer-links">
+          <li><a href="https://service-public.bj" target="_blank" rel="noopener">Service-Public.bj ↗</a></li>
+          <li><a href="https://anip.bj" target="_blank" rel="noopener">Portail National ANIP ↗</a></li>
+          <li><a href="https://decentralisation.gouv.bj" target="_blank" rel="noopener">Ministère de la Décentralisation ↗</a></li>
+          <li><a href="https://presidence.bj" target="_blank" rel="noopener">Présidence de la République ↗</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>
+        © 2026 Mairie de <span data-bind="commune-name">Cotonou</span> — République du Bénin. Tous droits réservés.
+      </div>
+      <div>
+        Template Atata conforme aux standards Modern Web Guidance & Code Territorial 2022.
+      </div>
+    </div>
+  </footer>
+
+  <!-- 10. Command Palette Modal (⌘K) -->
+  <div class="command-palette-backdrop" id="command-palette-backdrop" style="display: none;">
+    <div class="command-palette-dialog modal-dialog-enter">
+      <div class="command-palette-input-wrapper">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="command-palette-input" class="command-palette-input" placeholder="Rechercher une démarche, un lieu, ou changer de commune...">
+        <kbd style="font-size: 0.75rem; background: var(--bg-surface-muted); padding: 0.2rem 0.5rem; border-radius: 4px; color: var(--text-muted);">ESC</kbd>
+      </div>
+      <div class="command-palette-results" id="command-palette-results">
+        <!-- Résultats dynamiques -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 11. Customizer Drawer (Pour la présentation de lundi matin) -->
+  <div class="customizer-drawer drawer-enter" id="customizer-drawer" style="display: none;">
+    <div class="customizer-header">
+      <div>
+        <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--text-main);">Sélecteur de Commune</h3>
+        <p style="font-size: 0.75rem; color: var(--text-muted);">Démonstration Multi-Communes Bénin</p>
+      </div>
+      <button class="btn btn-icon" id="customizer-close-btn" style="width: 32px; height: 32px;">✕</button>
+    </div>
+
+    <div>
+      <label class="form-label">Choisissez une commune à prévisualiser :</label>
+      <div class="commune-select-grid" id="customizer-commune-grid">
+        <!-- Rempli dynamiquement -->
+      </div>
+    </div>
+
+    <hr style="border: 0; border-top: 1px solid var(--border-light);">
+
+    <div>
+      <label class="form-label">À propos du template :</label>
+      <p style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.5;">
+        Conçu pour être déployé en <strong>thème WordPress</strong> ou portail moderne pour l'ensemble des <strong>77 communes du Bénin</strong>.
+      </p>
+    </div>
+  </div>
+
+  <!-- Bouton Flottant Démo (Présentation Lundi) -->
+  <button class="floating-theme-pill" id="floating-demo-pill" onclick="document.getElementById('customizer-drawer').style.display='flex'">
+    <span>🇧🇯 Changer de Commune</span>
+  </button>
+
+  <!-- Scripts -->
+  <script src="js/communes-data.js"></script>
+  <script src="js/vector-interactions.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
